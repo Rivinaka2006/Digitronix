@@ -65,12 +65,19 @@
     <!-- Sidebar -->
     <div class="sidebar">
         <div class="px-3 mb-4">
-            <h4>DIGITRONIX</h4>
+            <h4><img src="resources/logo.png" alt="Logo"
+                    style="height:32px;vertical-align:middle;margin-right:8px;">DIGITRONIX</h4>
         </div>
-        <a class="bg-primary text-white rounded" href="#"><i class="fa fa-home me-2"></i> Dashboard</a>
-        <a href="#"><i class="fa fa-shield-alt me-2"></i> Authentication</a>
+        <a class="bg-primary text-white rounded" href="#" id="dashboard-link"><i class="fa fa-home me-2"></i>
+            Dashboard</a>
+        <a href="#" id="user-management-link"><i class="fa fa-users-cog me-2"></i> User Management</a>
+        <a href="#" id="product-management-link"><i class="fa fa-box-open me-2"></i> Product Management</a>
+        <a href="#" id="order-management-link"><i class="fa fa-shopping-cart me-2"></i> Order Management</a>
+        <a href="#" id="inventory-management-link"><i class="fa fa-warehouse me-2"></i> Inventory Management</a>
+        <a href="#" id="reporting-link"><i class="fa fa-chart-bar me-2"></i> Reporting</a>
         <hr>
         <a href="#"><i class="fa fa-ban me-2"></i> Disabled Menu</a>
+        <a href="#"><i class="fa fa-user-lock me-2"></i> Authentication</a>
         <a href="#"><i class="fa fa-question-circle me-2"></i> Documentation</a>
     </div>
 
@@ -92,12 +99,13 @@
                 <div class="card p-3 shadow-sm">
                     <div class="d-flex justify-content-between">
                         <div>
-                            <h5 class="text-warning">$30200</h5>
+                            <h5 class="text-warning">LKR 30200</h5>
                             <small class="text-dark">All Earnings</small>
                         </div>
                         <i class="fa fa-dollar-sign icon-box text-warning"></i>
                     </div>
-                    <div class="card-footer bg-warning text-white border-0 rounded-bottom mt-3 d-flex justify-content-between align-items-center" style="margin-left:-16px;margin-right:-16px;margin-bottom:-16px;">
+                    <div class="card-footer bg-warning text-white border-0 rounded-bottom mt-3 d-flex justify-content-between align-items-center"
+                        style="margin-left:-16px;margin-right:-16px;margin-bottom:-16px;">
                         <span>10% changes on profit</span>
                         <i class="fa fa-chart-line"></i>
                     </div>
@@ -112,7 +120,8 @@
                         </div>
                         <i class="fa fa-calendar icon-box text-danger"></i>
                     </div>
-                    <div class="card-footer bg-danger text-white border-0 rounded-bottom mt-3 d-flex justify-content-between align-items-center" style="margin-left:-16px;margin-right:-16px;margin-bottom:-16px;">
+                    <div class="card-footer bg-danger text-white border-0 rounded-bottom mt-3 d-flex justify-content-between align-items-center"
+                        style="margin-left:-16px;margin-right:-16px;margin-bottom:-16px;">
                         <span>28% task performance</span>
                         <i class="fa fa-chart-line"></i>
                     </div>
@@ -127,7 +136,8 @@
                         </div>
                         <i class="fa fa-file-alt icon-box text-success"></i>
                     </div>
-                    <div class="card-footer bg-success text-white border-0 rounded-bottom mt-3 d-flex justify-content-between align-items-center" style="margin-left:-16px;margin-right:-16px;margin-bottom:-16px;">
+                    <div class="card-footer bg-success text-white border-0 rounded-bottom mt-3 d-flex justify-content-between align-items-center"
+                        style="margin-left:-16px;margin-right:-16px;margin-bottom:-16px;">
                         <span>10k daily views</span>
                         <i class="fa fa-chart-line"></i>
                     </div>
@@ -138,12 +148,13 @@
                     <div class="d-flex justify-content-between">
                         <div>
                             <h5 class="text-primary">500</h5>
-                            <small class="text-dark">Downloads</small>
+                            <small class="text-dark">Likes</small>
                         </div>
                         <i class="fa fa-thumbs-up icon-box text-primary"></i>
                     </div>
-                    <div class="card-footer bg-primary text-white border-0 rounded-bottom mt-3 d-flex justify-content-between align-items-center" style="margin-left:-16px;margin-right:-16px;margin-bottom:-16px;">
-                        <span>1k download in App store</span>
+                    <div class="card-footer bg-primary text-white border-0 rounded-bottom mt-3 d-flex justify-content-between align-items-center"
+                        style="margin-left:-16px;margin-right:-16px;margin-bottom:-16px;">
+                        <span>Customer Satisfaction</span>
                         <i class="fa fa-chart-line"></i>
                     </div>
                 </div>
@@ -190,25 +201,25 @@
             </div>
 
             <div class="col-md-4">
-                <div class="card p-3 shadow-sm">
-                    <h6>Traffic Sources</h6>
-                    <div class="mt-2">Direct <div class="progress">
+                <div class="card p-3 shadow-sm" style="min-height: 365px;">
+                    <h6>Top Selling Products</h6>
+                    <div class="mt-2">Iphone 14 Pro Max <div class="progress">
                             <div class="progress-bar bg-primary" style="width:80%"></div>
                         </div>
                     </div>
-                    <div class="mt-2">Social <div class="progress">
+                    <div class="mt-2">Redmi Note 13 Pro <div class="progress">
                             <div class="progress-bar bg-secondary" style="width:50%"></div>
                         </div>
                     </div>
-                    <div class="mt-2">Referral <div class="progress">
+                    <div class="mt-2">Samsung S23 Ultra <div class="progress">
                             <div class="progress-bar bg-info" style="width:20%"></div>
                         </div>
                     </div>
-                    <div class="mt-2">Bounce <div class="progress">
+                    <div class="mt-2">Huawei P30 Pro <div class="progress">
                             <div class="progress-bar bg-dark" style="width:60%"></div>
                         </div>
                     </div>
-                    <div class="mt-2">Internet <div class="progress">
+                    <div class="mt-2">JBL Speakers <div class="progress">
                             <div class="progress-bar bg-primary" style="width:40%"></div>
                         </div>
                     </div>
@@ -225,9 +236,117 @@
     <!-- Your custom JS -->
     <script src="script.js"></script>
 
-    <!-- Call the chart function when page loads -->
+    <!-- Call the chart function when page loads and handle sidebar navigation -->
     <script>
+        // Store the initial dashboard content
+        const mainContent = document.querySelector('.main-content');
+        const initialDashboardContent = mainContent.innerHTML;
+
         window.addEventListener('DOMContentLoaded', () => {
+            loadDonutChart();
+            loadLineChart();
+        });
+
+        // Load User Management content into main-content div
+        document.getElementById('user-management-link').addEventListener('click', function (e) {
+            e.preventDefault();
+            fetch('adminUserManagement.html')
+                .then(response => response.text())
+                .then(html => {
+                    // Extract only the content inside <body>
+                    const bodyContent = html.match(/<body[^>]*>([\s\S]*)<\/body>/i);
+                    mainContent.innerHTML = bodyContent ? bodyContent[1] : html;
+                    // Ensure adminStyle.css is applied
+                    if (!document.querySelector('link[href="adminStyle.css"]')) {
+                        const styleLink = document.createElement('link');
+                        styleLink.rel = 'stylesheet';
+                        styleLink.href = 'adminStyle.css';
+                        document.head.appendChild(styleLink);
+                    }
+                });
+        });
+
+        // Load Product Management content into main-content div
+        document.getElementById('product-management-link').addEventListener('click', function (e) {
+            e.preventDefault();
+            fetch('adminProductManagement.html')
+                .then(response => response.text())
+                .then(html => {
+                    // Extract only the content inside <body>
+                    const bodyContent = html.match(/<body[^>]*>([\s\S]*)<\/body>/i);
+                    mainContent.innerHTML = bodyContent ? bodyContent[1] : html;
+                    // Ensure adminStyle.css is applied
+                    if (!document.querySelector('link[href="adminStyle.css"]')) {
+                        const styleLink = document.createElement('link');
+                        styleLink.rel = 'stylesheet';
+                        styleLink.href = 'adminStyle.css';
+                        document.head.appendChild(styleLink);
+                    }
+                });
+        });
+
+        // Load Order Management content into main-content div
+        document.getElementById('order-management-link').addEventListener('click', function (e) {
+            e.preventDefault();
+            fetch('adminOrderManagement.html')
+                .then(response => response.text())
+                .then(html => {
+                    // Extract only the content inside <body>
+                    const bodyContent = html.match(/<body[^>]*>([\s\S]*)<\/body>/i);
+                    mainContent.innerHTML = bodyContent ? bodyContent[1] : html;
+                    // Ensure adminStyle.css is applied
+                    if (!document.querySelector('link[href="adminStyle.css"]')) {
+                        const styleLink = document.createElement('link');
+                        styleLink.rel = 'stylesheet';
+                        styleLink.href = 'adminStyle.css';
+                        document.head.appendChild(styleLink);
+                    }
+                });
+        });
+
+        // Load Inventory Management content into main-content div
+        document.getElementById('inventory-management-link').addEventListener('click', function (e) {
+            e.preventDefault();
+            fetch('adminInventoryManagement.html')
+                .then(response => response.text())
+                .then(html => {
+                    // Extract only the content inside <body>
+                    const bodyContent = html.match(/<body[^>]*>([\s\S]*)<\/body>/i);
+                    mainContent.innerHTML = bodyContent ? bodyContent[1] : html;
+                    // Ensure adminStyle.css is applied
+                    if (!document.querySelector('link[href="adminStyle.css"]')) {
+                        const styleLink = document.createElement('link');
+                        styleLink.rel = 'stylesheet';
+                        styleLink.href = 'adminStyle.css';
+                        document.head.appendChild(styleLink);
+                    }
+                });
+        });
+
+        // Load Reporting content into main-content div
+        document.getElementById('reporting-link').addEventListener('click', function (e) {
+            e.preventDefault();
+            fetch('adminReporting.html')
+                .then(response => response.text())
+                .then(html => {
+                    // Extract only the content inside <body>
+                    const bodyContent = html.match(/<body[^>]*>([\s\S]*)<\/body>/i);
+                    mainContent.innerHTML = bodyContent ? bodyContent[1] : html;
+                    // Ensure adminStyle.css is applied
+                    if (!document.querySelector('link[href="adminStyle.css"]')) {
+                        const styleLink = document.createElement('link');
+                        styleLink.rel = 'stylesheet';
+                        styleLink.href = 'adminStyle.css';
+                        document.head.appendChild(styleLink);
+                    }
+                });
+        });
+
+        // Restore dashboard content when Dashboard is clicked
+        document.getElementById('dashboard-link').addEventListener('click', function (e) {
+            e.preventDefault();
+            mainContent.innerHTML = initialDashboardContent;
+            // Re-initialize dashboard charts if needed
             loadDonutChart();
             loadLineChart();
         });

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin - Reporting Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+<div class="container py-4">
+
+  <!-- Sales Reports -->
+  <div class="card mb-4">
+    <div class="card-header bg-primary text-white">Sales Reports</div>
+    <div class="card-body">
+      <ul class="nav nav-tabs mb-3" id="salesTab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#daily" type="button" role="tab">Daily</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" data-bs-toggle="tab" data-bs-target="#monthly" type="button" role="tab">Monthly</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" data-bs-toggle="tab" data-bs-target="#yearly" type="button" role="tab">Yearly</button>
+        </li>
+      </ul>
+      <div class="tab-content" id="salesTabContent">
+        <div class="tab-pane fade show active" id="daily" role="tabpanel">
+          <p><strong>Total Sales Today:</strong> $2,450</p>
+          <p>Orders: 34 | Returns: 2</p>
+        </div>
+        <div class="tab-pane fade" id="monthly" role="tabpanel">
+          <p><strong>Total Sales This Month:</strong> $38,900</p>
+          <p>Orders: 540 | Returns: 18</p>
+        </div>
+        <div class="tab-pane fade" id="yearly" role="tabpanel">
+          <p><strong>Total Sales This Year:</strong> $467,320</p>
+          <p>Orders: 6,208 | Returns: 102</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Customer Activity Logs -->
+  <div class="card mb-4">
+    <div class="card-header bg-success text-white">Customer Activity Logs</div>
+    <div class="card-body table-responsive">
+      <table class="table table-bordered table-striped">
+        <thead class="table-success">
+          <tr>
+            <th>Customer</th>
+            <th>Action</th>
+            <th>Date</th>
+            <th>IP Address</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>rivinaka@email.com</td>
+            <td>Placed Order #ORD1021</td>
+            <td>2025-07-13 08:45</td>
+            <td>192.168.1.5</td>
+          </tr>
+          <tr>
+            <td>johnsmith@gmail.com</td>
+            <td>Reset Password</td>
+            <td>2025-07-12 22:10</td>
+            <td>192.168.1.12</td>
+          </tr>
+          <tr>
+            <td>amanda@xyz.com</td>
+            <td>Updated Address</td>
+            <td>2025-07-11 16:30</td>
+            <td>192.168.1.8</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Inventory Report -->
+  <div class="card">
+    <div class="card-header bg-danger text-white">Inventory & Stock Report</div>
+    <div class="card-body table-responsive">
+      <table class="table table-bordered table-striped">
+        <thead class="table-primary">
+          <tr>
+            <th>Product</th>
+            <th>Category</th>
+            <th>Stock</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Galaxy S22</td>
+            <td>Smartphones</td>
+            <td>3</td>
+            <td><span class="badge bg-warning text-dark">Low Stock</span></td>
+          </tr>
+          <tr>
+            <td>HP Pavilion</td>
+            <td>Laptops</td>
+            <td>25</td>
+            <td><span class="badge bg-success">In Stock</span></td>
+          </tr>
+          <tr>
+            <td>Logitech Mouse</td>
+            <td>Accessories</td>
+            <td>0</td>
+            <td><span class="badge bg-danger">Out of Stock</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

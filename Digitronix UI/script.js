@@ -1,5 +1,5 @@
 // Price Range Filter Live Update
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   const priceMin = document.getElementById('priceMin');
   const priceMax = document.getElementById('priceMax');
   const priceRangeLabel = document.getElementById('priceRangeLabel');
@@ -28,12 +28,12 @@ if (priceMin && priceMax && priceRangeLabel) {
   priceMax.addEventListener('input', updatePriceLabel);
   updatePriceLabel();
 }
-document.getElementById('applyPriceFilter')?.addEventListener('click', function() {
+document.getElementById('applyPriceFilter')?.addEventListener('click', function () {
   // Implement filter logic here
   alert(priceRangeLabel.textContent + ' (filter logic not implemented)');
 });
 // Add shadow to category bar on scroll
-window.addEventListener('scroll', function() {
+window.addEventListener('scroll', function () {
   var categoryBar = document.getElementById('category-bar');
   if (window.scrollY > 10) {
     categoryBar.classList.add('scrolled');
@@ -61,9 +61,9 @@ function loadDonutChart() {
       label: 'Total Revenue',
       data: [300, 450, 150],
       backgroundColor: [
-        'rgb(255, 99, 132)',   
-        'rgb(54, 162, 235)',  
-        'rgb(255, 205, 86)'    
+        'rgb(255, 99, 132)',
+        'rgb(54, 162, 235)',
+        'rgb(255, 205, 86)'
       ],
       hoverOffset: 4
     }]
