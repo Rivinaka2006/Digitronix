@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .btn-login, .btn-login .login-btn-text {
+        color: #fff !important;
+      }
+      .btn-login:hover, .btn-login:focus, .btn-login:active, .btn-login:hover .login-btn-text {
+        color: #fff !important;
+      }
+    </style>
+    <title>Login</title>
+</head>
+
+<body>
+    <div class="bg-primary text-white p-4 d-flex align-items-center">
+        <a href="index.html" class="text-decoration-none text-white">
+            <h2 class="mb-0 me-5"> WELCOME TO DIGITRONIX</h2>
+        </a>
+        <!-- Searchbar -->
+        <form class="d-flex col-5 me-3">
+            <input class="form-control form-control-md me-2" type="search" placeholder="Search for products..."
+                aria-label="Search">
+            <button class="btn btn-success me-3" type="submit">Search</button>
+        </form>
+
+        <!-- Icons with Counters -->
+        <span class="material-symbols-outlined me-4">favorite</span>
+        <span class="material-symbols-outlined me-4">compare_arrows</span>
+        <span class="material-symbols-outlined me-5">shopping_cart_checkout</span>
+        <span class="ms-3">RS 0.00</span>
+    </div>
+
+    <!-- Sticky advanced search + browse category bar -->
+    <div class="sticky-search-bar">
+        <div class="bg-light p-3 d-flex align-items-center">
+            <!-- Browse Categories Dropdown -->
+            <div class="dropdown me-2">
+                <button class="btn btn-light dropdown-toggle" type="button" id="categoryDropdown"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    Browse Categories
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="categoryDropdown">
+                    <li><a class="dropdown-item" href="#">New Arrivals</a></li>
+                    <li><a class="dropdown-item" href="#">Mobile Phones</a></li>
+                    <li><a class="dropdown-item" href="#">Tablets & Ipads</a></li>
+                    <li><a class="dropdown-item" href="#">Mobile Accessories</a></li>
+                    <li><a class="dropdown-item" href="#">Smartwatches</a></li>
+                    <li><a class="dropdown-item" href="#">Bluetooth Speakers</a></li>
+                    <li><a class="dropdown-item" href="#">Earbuds</a></li>
+                    <li><a class="dropdown-item" href="#">Headphones</a></li>
+                    <li><a class="dropdown-item" href="#">Headsets</a></li>
+                    <li><a class="dropdown-item" href="#">Power Banks</a></li>
+                </ul>
+            </div>
+            <!-- Navigation Pills -->
+            <nav class="nav nav-pills ms-0">
+                <a class="nav-link text-dark" href="shopView.html">Shop</a>
+                <a class="nav-link text-dark" href="#">MacBooks</a>
+                <a class="nav-link text-dark" href="#">Mobile Phones</a>
+                <a class="nav-link text-dark" href="#">Accessories</a>
+                <a class="nav-link text-dark" href="#">Gadgets</a>
+                <a class="nav-link text-dark" href="#">Gift Vouchers</a>
+                <a class="nav-link text-dark" href="#">Corporate</a>
+            </nav>
+        </div>
+    </div>
+
+    <div class="login-container">
+        <h3 class="fw-bold mb-4">LOGIN</h3>
+        <form>
+            <div class="mb-3">
+                <label for="login-username" class="form-label">Username or email address <span
+                        class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="login-username" required autocomplete="username">
+            </div>
+            <div class="mb-3">
+                <label for="login-password" class="form-label">Password <span class="text-danger">*</span></label>
+                <div class="input-group">
+                    <input type="password" class="form-control" id="login-password" required
+                        autocomplete="current-password">
+                    <span class="input-group-text" id="toggle-password">
+                        <svg id="eye-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none"
+                            stroke="#444" stroke-width="2" viewBox="0 0 24 24">
+                            <ellipse cx="12" cy="12" rx="7" ry="5.5" />
+                            <circle cx="12" cy="12" r="2.5" fill="#fff" />
+                        </svg>
+                    </span>
+                </div>
+            </div>
+            <div class="mb-3">
+                <a href="userProfie.html" class="text-decoration-none">
+                  <button type="submit" class="btn btn-login w-100 py-2"><span class="login-btn-text">LOG IN</span></button>
+                </a>
+            </div>
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="remember-me">
+                    <label class="form-check-label" for="remember-me">Remember me</label>
+                </div>
+                <a href="#" class="forgot-link">Lost your password?</a>
+            </div>
+        </form>
+
+        <!-- Registration Option -->
+        <div class="text-center mt-5">
+            <div class="mb-3">
+                <span class="d-inline-block bg-light rounded-circle p-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="none" stroke="#444"
+                        stroke-width="2" viewBox="0 0 24 24">
+                        <circle cx="12" cy="8" r="4" />
+                        <path d="M4 20c0-4 4-6 8-6s8 2 8 6" />
+                    </svg>
+                </span>
+            </div>
+            <div class="mb-2 fw-semibold">No account yet?</div>
+            <a href="register.html" class="fw-semibold"
+                style="color:#222;text-decoration:underline;text-underline-offset:3px;text-decoration-color:#0d6efd;">CREATE
+                AN ACCOUNT</a>
+        </div>
+    </div>
+    <script>
+        // Password show/hide toggle
+        document.getElementById('toggle-password').addEventListener('click', function () {
+            const passwordInput = document.getElementById('login-password');
+            const type = passwordInput.type === 'password' ? 'text' : 'password';
+            passwordInput.type = type;
+        });
+    </script>
+</body>
+
+</html>

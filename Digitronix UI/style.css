@@ -1,0 +1,497 @@
+/* Ensure main header and category bar are stuck together with no gap */
+#main-header {
+  margin-bottom: 0 !important;
+}
+#main-header + #category-bar {
+  margin-top: 0 !important;
+}
+/* Category bar transition (keep for smoothness) */
+#category-bar {
+  background-color: #fff !important;
+  color: #212529 !important;
+  transition: padding 0.3s, min-height 0.3s, box-shadow 0.2s;
+}
+
+/* White Browse Categories button */
+#category-bar .dropdown-toggle {
+  background-color: #fff !important;
+  color: #212529 !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Shadow effect for category bar on scroll */
+#category-bar.scrolled {
+  box-shadow: 0 2px 8px 0 rgba(0,0,0,0.07);
+}
+/* Zoom animation for Shop by Category cards */
+.category-card-zoom {
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.category-card-zoom:hover {
+    transform: scale(1.07);
+    box-shadow: none;
+    z-index: 2;
+}
+
+/* Highlight product card on hover */
+.custom-card:hover {
+    box-shadow: 0 8px 24px rgba(13, 110, 253, 0.18), 0 1.5px 8px rgba(13, 110, 253, 0.12);
+    /* border removed for no highlight */
+    transform: translateY(-4px) scale(1.03);
+    transition: box-shadow 0.2s, border 0.2s, transform 0.2s;
+    z-index: 2;
+}
+
+.custom-card {
+    transition: box-shadow 0.2s, border 0.2s, transform 0.2s;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+    /* Makes the menu appear on hover */
+    margin-top: 0;
+    /* Adjusts position */
+}
+
+.category-circle {
+    text-decoration: none;
+    color: inherit;
+}
+
+.card {
+    background-color: #f8f9fa;
+    border-radius: 15px;
+}
+
+.circle-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+}
+
+.circle-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#image-banner {
+    padding-left: 90px;
+    padding-right: 90px;
+}
+
+#item-category {
+    padding-left: 65px;
+    padding-right: 65px;
+}
+
+#category-name {
+    padding-left: 50px;
+}
+
+.custom-wrapper {
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.custom-card {
+    width: 100%;
+    max-width: 196px;
+    height: auto;
+    border: none;
+    box-shadow: none;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+}
+
+.custom-card img {
+    width: 100%;
+    max-width: 196px;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    /* Keeps image square */
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.custom-card .card-body {
+    padding: 8px;
+    text-align: center;
+}
+
+.custom-card h5 {
+    font-size: 0.9rem;
+    margin-bottom: 4px;
+}
+
+.custom-card p {
+    font-size: 0.8rem;
+    margin-bottom: 4px;
+}
+
+@media (max-width: 576px) {
+    .custom-wrapper {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .custom-card h5 {
+        font-size: 0.85rem;
+    }
+
+    .custom-card p {
+        font-size: 0.75rem;
+    }
+}
+
+/*Single Product View*/
+
+.product-image-area {
+    position: relative;
+    background: #f5f5f7;
+    border-radius: 12px;
+    min-height: 480px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.warranty-badge .badge-inner {
+    text-align: center;
+}
+
+.free-tag {
+    position: absolute;
+    left: 18%;
+    bottom: 28%;
+    background: #fff;
+    color: #222;
+    border: 2px solid #aaa;
+    padding: 5px 18px;
+    transform: rotate(-30deg);
+    font-weight: bold;
+    font-size: 1.15rem;
+    z-index: 2;
+}
+
+.color-swatches .swatch {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+    display: inline-block;
+    margin-right: 12px;
+    background: #eee;
+}
+
+.variant-thumbs img,
+.variant-thumbs .variant-thumb-mock {
+    width: 50px;
+    height: 80px;
+    border: 1.5px solid #bbb;
+    border-radius: 8px;
+    margin-right: 18px;
+    margin-bottom: 8px;
+    background: #f5f5f5;
+    object-fit: contain;
+    display: inline-block;
+}
+
+/* Responsive tweaks */
+@media (max-width: 991px) {
+    .warranty-badge {
+        position: static;
+        margin: 10px auto 0;
+    }
+
+    .free-tag {
+        position: static;
+        display: inline-block;
+        margin: 10px 0 0 0;
+        transform: none;
+    }
+}
+
+@media (max-width: 767px) {
+    .product-image-area {
+        min-height: 300px;
+        flex-direction: column;
+    }
+
+    .variant-thumbs .variant-thumb-mock,
+    .variant-thumbs img {
+        width: 38px;
+        height: 60px;
+        margin-right: 8px;
+    }
+}
+
+/* Make the search & category bar sticky */
+.sticky-search-bar {
+    position: sticky;
+    top: 0;
+    z-index: 1040;
+    /* above content, below modal */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+}
+
+/* Optional: To avoid double border if your content is white */
+.sticky-search-bar {
+    border-bottom: 1px solid #e9ecef;
+    background: #f8f9fa;
+}
+
+/* Demo swatch/variant styles */
+.color-swatches .swatch {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+    display: inline-block;
+    margin-right: 12px;
+    background: #eee;
+}
+
+.variant-thumbs .variant-thumb-mock {
+    width: 50px;
+    height: 80px;
+    border: 1.5px solid #bbb;
+    border-radius: 8px;
+    margin-right: 18px;
+    margin-bottom: 8px;
+    background: #f5f5f5;
+    display: inline-block;
+}
+
+/*login*/
+body {
+    background: #fff;
+}
+
+.login-container {
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 32px 24px 16px 24px;
+    background: #fff;
+    border-radius: 8px;
+}
+
+.form-label {
+    font-weight: 500;
+}
+
+.form-control:focus {
+    border-color: #3887f6;
+    box-shadow: 0 0 0 0.2rem rgba(56, 135, 246, .1);
+}
+
+.btn-login {
+    background: #3887f6;
+    color: #fff;
+    font-weight: 500;
+    letter-spacing: 1px;
+    border: none;
+    transition: background 0.2s;
+}
+
+.btn-login:hover,
+.btn-login:focus {
+    background: #236ed3;
+}
+
+.forgot-link {
+    color: #3887f6;
+    text-decoration: none;
+    font-size: 0.97rem;
+}
+
+.forgot-link:hover {
+    text-decoration: underline;
+}
+
+.form-check-label {
+    font-size: 0.98rem;
+}
+
+.input-group-text {
+    background: transparent;
+    border-left: none;
+    cursor: pointer;
+}
+
+.input-group .form-control {
+    border-right: none;
+}
+
+/* Responsive card grid and card width */
+.custom-card {
+    min-width: 180px;
+    max-width: 220px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+@media (max-width: 1200px) {
+    .custom-card {
+        min-width: 160px;
+        max-width: 200px;
+    }
+}
+
+@media (max-width: 992px) {
+    .custom-card {
+        min-width: 140px;
+        max-width: 180px;
+    }
+}
+
+@media (max-width: 768px) {
+    .custom-card {
+        min-width: 120px;
+        max-width: 100%;
+    }
+}
+
+.row.gx-1,
+.row.gx-1.gy-3,
+.row.gx-1.gy-2,
+.row.gx-1.gy-1 {
+    --bs-gutter-x: 0.5rem !important;
+    --bs-gutter-y: 1rem !important;
+}
+
+@media (max-width: 576px) {
+    .custom-card {
+        min-width: 100px;
+        max-width: 100%;
+    }
+
+    .row.gx-1,
+    .row.gx-1.gy-3,
+    .row.gx-1.gy-2,
+    .row.gx-1.gy-1 {
+        --bs-gutter-x: 0.25rem !important;
+        --bs-gutter-y: 0.5rem !important;
+    }
+}
+
+/* Make images responsive inside cards */
+.custom-card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Responsive category circles */
+.category-circle {
+    display: block;
+    width: 100%;
+    max-width: 120px;
+    margin: 0 auto;
+}
+
+@media (max-width: 576px) {
+    .category-circle {
+        max-width: 80px;
+    }
+}
+
+/* Responsive card grid and card width */
+.custom-card {
+    min-width: 180px;
+    max-width: 220px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+@media (max-width: 1200px) {
+    .custom-card {
+        min-width: 160px;
+        max-width: 200px;
+    }
+}
+
+@media (max-width: 992px) {
+    .custom-card {
+        min-width: 140px;
+        max-width: 180px;
+    }
+}
+
+@media (max-width: 768px) {
+    .custom-card {
+        min-width: 120px;
+        max-width: 100%;
+    }
+}
+
+.row.gx-1,
+.row.gx-1.gy-3,
+.row.gx-1.gy-2,
+.row.gx-1.gy-1 {
+    --bs-gutter-x: 0.5rem !important;
+    --bs-gutter-y: 1rem !important;
+}
+
+@media (max-width: 576px) {
+    .custom-card {
+        min-width: 100px;
+        max-width: 100%;
+    }
+
+    .row.gx-1,
+    .row.gx-1.gy-3,
+    .row.gx-1.gy-2,
+    .row.gx-1.gy-1 {
+        --bs-gutter-x: 0.25rem !important;
+        --bs-gutter-y: 0.5rem !important;
+    }
+}
+
+/* Make images responsive inside cards */
+.custom-card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Responsive category circles */
+.category-circle {
+    display: block;
+    width: 100%;
+    max-width: 120px;
+    margin: 0 auto;
+}
+
+@media (max-width: 576px) {
+    .category-circle {
+        max-width: 80px;
+    }
+}
+
+/* Shrink header on scroll */
+.shrink-header {
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+    transition: padding 0.3s;
+}
+
+.shrink-header h2 {
+    font-size: 1.5rem !important;
+    transition: font-size 0.3s;
+}
+
+.shrink-header form {
+    max-height: 38px;
+    transition: max-height 0.3s;
+}
