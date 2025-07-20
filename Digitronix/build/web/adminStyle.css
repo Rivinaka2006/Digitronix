@@ -1,0 +1,87 @@
+   body {
+       background: #f7f8fa;
+   }
+
+   .card {
+       border-radius: 12px;
+       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+       border: none;
+   }
+
+   .table th,
+   .table td {
+       vertical-align: middle;
+   }
+
+   .table thead th {
+       background: #f3f4fa;
+       font-weight: 600;
+   }
+
+   .table tbody tr {
+       background: #f9f9fc;
+   }
+
+   .table tbody tr:nth-child(even) {
+       background: #f3f4fa;
+   }
+
+   .avatar {
+       width: 32px;
+       height: 32px;
+       border-radius: 50%;
+       object-fit: cover;
+   }
+
+   .btn-actions {
+       background: #382dff;
+       color: #fff;
+       border-radius: 6px;
+       font-weight: 500;
+   }
+
+   .btn-actions:focus {
+       box-shadow: none;
+   }
+
+   .pagination .page-link {
+       border-radius: 50%;
+       color: #382dff;
+       border: none;
+   }
+
+   .pagination .active .page-link {
+       background: #382dff;
+       color: #fff;
+   }
+
+   .search-box {
+       border-radius: 8px;
+       border: 1px solid #e0e3ea;
+   }
+
+   .top-bar {
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+       margin-bottom: 18px;
+   }
+
+   .top-bar h4 {
+       margin-bottom: 0;
+   }
+
+   .btn-export {
+       border: 1px solid #2ecc71;
+       color: #2ecc71;
+       background: #fff;
+       border-radius: 6px;
+       font-weight: 500;
+   }
+
+   .btn-create {
+       background: #382dff;
+       color: #fff;
+       border-radius: 6px;
+       font-weight: 500;
+   }

@@ -1,0 +1,156 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verify Account</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Material Symbols (Google Fonts) -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+</head>
+<body class="bg-light">
+  <nav id="main-header" class="navbar navbar-expand-lg bg-primary text-white sticky-top p-0" style="z-index:1040;">
+    <div class="container-fluid py-3 px-2">
+      <a class="navbar-brand text-white fw-bold fs-3 me-lg-5 d-flex align-items-center" href="index.html">
+        <img src="resources/logo.png" alt="Logo" style="height:38px;width:auto;margin-right:10px;">
+        DIGITRONIX
+      </a>
+      <button class="navbar-toggler text-white border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainHeaderNav" aria-controls="mainHeaderNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainHeaderNav">
+        <form class="d-flex flex-grow-1 mx-lg-3 my-3 my-lg-0 order-2 order-lg-1" role="search">
+          <input class="form-control form-control-md me-2" type="search" placeholder="Search for products..." aria-label="Search">
+          <button class="btn btn-success me-3" type="submit">Search</button>
+        </form>
+        <ul class="navbar-nav ms-auto align-items-lg-center order-3 order-lg-2 flex-row flex-lg-row">
+          <li class="nav-item me-lg-4 mb-2 mb-lg-0">
+            <a href="login.html" class="text-white text-decoration-none">LOGIN / REGISTER</a>
+          </li>
+          <li class="nav-item me-lg-4 mb-2 mb-lg-0">
+            <span class="material-symbols-outlined">favorite</span>
+          </li>
+          <li class="nav-item me-lg-4 mb-2 mb-lg-0">
+            <span class="material-symbols-outlined">compare_arrows</span>
+          </li>
+          <li class="nav-item me-lg-4 mb-2 mb-lg-0">
+            <a href="cart.html" class="text-white"><span class="material-symbols-outlined">shopping_cart_checkout</span></a>
+          </li>
+          <li class="nav-item">
+            <span class="ms-lg-3">RS 0.00</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <nav id="category-bar" class="navbar navbar-expand-lg bg-light sticky-top shadow-sm" style="top:72px; z-index:1039;">
+    <div class="container-fluid py-2 px-2">
+      <div class="dropdown me-2 mb-2 mb-lg-0">
+        <button class="btn btn-light dropdown-toggle w-100" type="button" id="categoryDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+          Browse Categories
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="categoryDropdown">
+          <li><a class="dropdown-item" href="#">New Arrivals</a></li>
+          <li><a class="dropdown-item" href="#">Mobile Phones</a></li>
+          <li><a class="dropdown-item" href="#">Tablets & Ipads</a></li>
+          <li><a class="dropdown-item" href="#">Mobile Accessories</a></li>
+          <li><a class="dropdown-item" href="#">Smartwatches</a></li>
+          <li><a class="dropdown-item" href="#">Bluetooth Speakers</a></li>
+          <li><a class="dropdown-item" href="#">Earbuds</a></li>
+          <li><a class="dropdown-item" href="#">Headphones</a></li>
+          <li><a class="dropdown-item" href="#">Headsets</a></li>
+          <li><a class="dropdown-item" href="#">Power Banks</a></li>
+        </ul>
+      </div>
+      <button class="navbar-toggler ms-auto mb-2 mb-lg-0" type="button" data-bs-toggle="collapse" data-bs-target="#categoryBarNav" aria-controls="categoryBarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="categoryBarNav">
+        <ul class="navbar-nav ms-lg-2 flex-wrap flex-row">
+          <li class="nav-item"><a class="nav-link text-dark" href="shopView.html">Shop</a></li>
+          <li class="nav-item"><a class="nav-link text-dark" href="#">MacBooks</a></li>
+          <li class="nav-item"><a class="nav-link text-dark" href="#">Mobile Phones</a></li>
+          <li class="nav-item"><a class="nav-link text-dark" href="#">Accessories</a></li>
+          <li class="nav-item"><a class="nav-link text-dark" href="#">Gadgets</a></li>
+          <li class="nav-item"><a class="nav-link text-dark" href="#">Gift Vouchers</a></li>
+          <li class="nav-item"><a class="nav-link text-dark" href="#">Corporate</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <style>
+    body {
+      background-color: #f4f6f9;
+    }
+    .verification-box {
+      max-width: 500px;
+      margin: 80px auto;
+      padding: 40px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+    }
+    .brand-title {
+      font-weight: 700;
+      color: #0d6efd;
+    }
+  </style>
+  <div class="container">
+    <div class="verification-box text-center">
+      <h2 class="brand-title mb-3">Digitronix</h2>
+      <h4 class="mb-4">Email Verification</h4>
+      <p class="text-muted">We’ve sent a 6-digit verification code to your email. Please enter it below to verify your account.</p>
+      <form id="verificationForm">
+        <div class="mb-3">
+          <input type="text" class="form-control text-center" id="verificationCode" placeholder="Enter verification code" maxlength="6" required>
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Verify Email</button>
+        <div class="mt-3 text-muted">
+          Didn't receive the code?
+          <a href="#" onclick="resendCode()" class="text-decoration-none">Resend</a>
+        </div>
+        <div id="responseMessage" class="mt-3"></div>
+      </form>
+    </div>
+  </div>
+  <script>
+    document.getElementById("verificationForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const code = document.getElementById("verificationCode").value.trim();
+      const responseDiv = document.getElementById("responseMessage");
+      if (code.length !== 6 || isNaN(code)) {
+        responseDiv.innerHTML = '<div class="alert alert-danger">Invalid code format. Must be 6 digits.</div>';
+        return;
+      }
+      // AJAX call to your servlet or API (you should implement this)
+      fetch('/VerifyEmail', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ code: code })
+      })
+      .then(res => res.json())
+      .then(data => {
+        if (data.status === 'success') {
+          responseDiv.innerHTML = '<div class="alert alert-success">Email verified successfully!</div>';
+        } else {
+          responseDiv.innerHTML = `<div class="alert alert-danger">${data.message}</div>`;
+        }
+      })
+      .catch(() => {
+        responseDiv.innerHTML = '<div class="alert alert-danger">Something went wrong. Please try again.</div>';
+      });
+    });
+    function resendCode() {
+      // Trigger code resend (you need to create the backend logic)
+      fetch('/ResendVerificationCode', {
+        method: 'POST'
+      })
+      .then(() => {
+        alert("Verification code resent to your email.");
+      });
+    }
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

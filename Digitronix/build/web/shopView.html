@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Product category badge default styles */
+    .product-category-list .badge.rounded-pill {
+      background: #fff !important;
+      color: #222 !important;
+      border: 1px solid #e3e3e3;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .product-category-list li:hover .badge.rounded-pill {
+      background: #0d6efd !important;
+      color: #fff !important;
+      border-color: #0d6efd !important;
+    }
+  </style>
+  <title>Shop</title>
+</head>
+
+<body>
+  <nav id="main-header" class="navbar navbar-expand-lg bg-primary text-white sticky-top p-0" style="z-index:1040;">
+    <div class="container-fluid py-3 px-2">
+      <a class="navbar-brand text-white fw-bold fs-3 me-lg-5" href="index.html">
+        <img src="resources/logo.png" alt="Logo" style="height:38px;width:auto;margin-right:10px;">
+        DIGITRONIX</a>
+      <button class="navbar-toggler text-white border-0" type="button" data-bs-toggle="collapse"
+        data-bs-target="#mainHeaderNav" aria-controls="mainHeaderNav" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainHeaderNav">
+        <form class="d-flex flex-grow-1 mx-lg-3 my-3 my-lg-0 order-2 order-lg-1" role="search">
+          <input class="form-control form-control-md me-2" type="search" placeholder="Search for products..."
+            aria-label="Search">
+          <button class="btn btn-success me-3" type="submit">Search</button>
+        </form>
+        <ul class="navbar-nav ms-auto align-items-lg-center order-3 order-lg-2 flex-row flex-lg-row">
+          <li class="nav-item me-lg-4 mb-2 mb-lg-0">
+            <a href="login.html" class="text-white text-decoration-none">LOGIN / REGISTER</a>
+          </li>
+          <li class="nav-item me-lg-4 mb-2 mb-lg-0">
+            <span class="material-symbols-outlined">favorite</span>
+          </li>
+          <li class="nav-item me-lg-4 mb-2 mb-lg-0">
+            <span class="material-symbols-outlined">compare_arrows</span>
+          </li>
+          <li class="nav-item me-lg-4 mb-2 mb-lg-0">
+            <a href="cart.html" class="text-white"><span
+                class="material-symbols-outlined">shopping_cart_checkout</span></a>
+          </li>
+          <li class="nav-item">
+            <span class="ms-lg-3">RS 0.00</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Removed duplicate Samsung Mobile Online Store Title, Breadcrumb, and Controls from above the category tab -->
+  <nav id="category-bar" class="navbar navbar-expand-lg bg-light sticky-top shadow-sm" style="top:72px; z-index:1039;">
+    <div class="container-fluid py-2 px-2">
+      <div class="dropdown me-2 mb-2 mb-lg-0">
+        <button class="btn btn-light dropdown-toggle w-100" type="button" id="categoryDropdown"
+          data-bs-toggle="dropdown" aria-expanded="false">
+          Browse Categories
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="categoryDropdown">
+          <li><a class="dropdown-item" href="#">New Arrivals</a></li>
+          <li><a class="dropdown-item" href="#">Mobile Phones</a></li>
+          <li><a class="dropdown-item" href="#">Tablets & Ipads</a></li>
+          <li><a class="dropdown-item" href="#">Mobile Accessories</a></li>
+          <li><a class="dropdown-item" href="#">Smartwatches</a></li>
+          <li><a class="dropdown-item" href="#">Bluetooth Speakers</a></li>
+          <li><a class="dropdown-item" href="#">Earbuds</a></li>
+          <li><a class="dropdown-item" href="#">Headphones</a></li>
+          <li><a class="dropdown-item" href="#">Headsets</a></li>
+          <li><a class="dropdown-item" href="#">Power Banks</a></li>
+        </ul>
+      </div>
+      <button class="navbar-toggler ms-auto mb-2 mb-lg-0" type="button" data-bs-toggle="collapse"
+        data-bs-target="#categoryBarNav" aria-controls="categoryBarNav" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="categoryBarNav">
+        <ul class="navbar-nav ms-lg-2 flex-wrap flex-row">
+          <li class="nav-item"><a class="nav-link text-dark" href="#">Shop</a></li>
+          <li class="nav-item"><a class="nav-link text-dark" href="#">MacBooks</a></li>
+          <li class="nav-item"><a class="nav-link text-dark" href="#">Mobile Phones</a></li>
+          <li class="nav-item"><a class="nav-link text-dark" href="#">Accessories</a></li>
+          <li class="nav-item"><a class="nav-link text-dark" href="#">Gadgets</a></li>
+          <li class="nav-item"><a class="nav-link text-dark" href="#">Gift Vouchers</a></li>
+          <li class="nav-item"><a class="nav-link text-dark" href="#">Corporate</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container-fluid mt-4">
+    <div class="row">
+      <!-- Product Categories Sidebar -->
+      <aside class="col-12 col-md-3 col-lg-2 mb-4 mt-1" style="margin-left: 12px;">
+        <div style="background: none; box-shadow: none; border: none;">
+          <div class="fw-bold mb-2" style="color: #000000; font-size: 1.1rem; letter-spacing: 1px; margin-left: 9px;">
+            PRODUCT CATEGORIES</div>
+          <ul class="list-unstyled m-0 p-0 product-category-list">
+            <li class="d-flex justify-content-between align-items-center py-1 px-2">Action Cameras <span
+                class="badge bg-secondary rounded-pill">18</span></li>
+            <li class="d-flex justify-content-between align-items-center py-1 px-2">Air Purifier <span
+                class="badge bg-secondary rounded-pill">3</span></li>
+            <li class="d-flex justify-content-between align-items-center py-1 px-2">Apple Accessories <span
+                class="badge bg-secondary rounded-pill">58</span></li>
+            <li class="d-flex justify-content-between align-items-center py-1 px-2">Apple iMac <span
+                class="badge bg-secondary rounded-pill">2</span></li>
+            <li class="d-flex justify-content-between align-items-center py-1 px-2">Apple MacBook <span
+                class="badge bg-secondary rounded-pill">7</span></li>
+            <li class="d-flex justify-content-between align-items-center py-1 px-2">Apple Vision Pro <span
+                class="badge bg-secondary rounded-pill">1</span></li>
+            <li class="d-flex justify-content-between align-items-center py-1 px-2">Audio Speakers & Subwoofers <span
+                class="badge bg-secondary rounded-pill">34</span></li>
+            <li class="d-flex justify-content-between align-items-center py-1 px-2">Bags <span
+                class="badge bg-secondary rounded-pill">1</span></li>
+            <li class="d-flex justify-content-between align-items-center py-1 px-2">Battery <span
+                class="badge bg-secondary rounded-pill">0</span></li>
+            <li class="d-flex justify-content-between align-items-center py-1 px-2">Bellagio <span
+                class="badge bg-secondary rounded-pill">45</span></li>
+            <li class="d-flex justify-content-between align-items-center py-1 px-2">Bluetooth Earbuds <span
+                class="badge bg-secondary rounded-pill">126</span></li>
+            <li class="d-flex justify-content-between align-items-center py-1 px-2">Bluetooth Headphones <span
+                class="badge bg-secondary rounded-pill">61</span></li>
+            <li class="d-flex justify-content-between align-items-center py-1 px-2">Bluetooth Headsets <span
+                class="badge bg-secondary rounded-pill">56</span></li>
+            <li class="d-flex justify-content-between align-items-center py-1 px-2">Cable <span
+                class="badge bg-secondary rounded-pill">78</span></li>
+            <li class="d-flex justify-content-between align-items-center py-1 px-2">Car Accessories <span
+                class="badge bg-secondary rounded-pill">90</span></li>
+            <li class="d-flex justify-content-between align-items-center py-1 px-2">Charger <span
+                class="badge bg-secondary rounded-pill">122</span></li>
+            <li class="d-flex justify-content-between align-items-center py-1 px-2">Company Mobile Phones <span
+                class="badge bg-secondary rounded-pill">18</span></li>
+          </ul>
+        </div>
+        <hr>
+        <!-- Price Range Filter -->
+        <div class="card border-0 mb-3 mt-2" style="margin-left: 2px; margin-right: 8px; background-color: white;">
+          <div class="card-body p-2">
+            <div class="fw-bold mb-2" style="font-size: 1.1rem; letter-spacing: 1px;">FILTER BY PRICE</div>
+            <div class="mb-2 px-1">
+              <input type="range" class="form-range" min="0" max="1399990" step="1000" id="priceMin" value="0">
+              <input type="range" class="form-range mt-2" min="0" max="1399990" step="1000" id="priceMax"
+                value="1399990">
+            </div>
+            <div class="mb-2 px-1" id="priceRangeLabel" style="font-size: 0.98rem;">
+              Price: Rs. 0 – Rs. 1,399,990
+            </div>
+            <button class="btn btn-primary w-100" id="applyPriceFilter">FILTER</button>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Main Content: Title, Breadcrumb, Controls -->
+      <div class="col">
+        <!-- Samsung Mobile Online Store Title -->
+        <div class="row">
+          <div class="col-12">
+            <h2 class="fw-bold text-uppercase mb-2" style="letter-spacing:1px; font-size:1.6rem;">SAMSUNG MOBILE ONLINE
+              STORE</h2>
+          </div>
+        </div>
+        <!-- Breadcrumb -->
+        <div class="row mb-3">
+          <div class="col-12">
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb bg-transparent p-0 mb-0">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Shop at Digitronix</li>
+              </ol>
+            </nav>
+          </div>
+        </div>
+        <!-- Controls Row -->
+        <div class="row align-items-center mb-3 g-2">
+          <div class="col-auto d-flex align-items-center ms-auto">
+            <span class="me-2">Show:</span>
+            <button class="btn btn-outline-primary btn-sm me-1 active">9</button>
+            <button class="btn btn-outline-primary btn-sm me-1">24</button>
+            <button class="btn btn-outline-primary btn-sm">36</button>
+            <span class="me-2"></span>
+            <span class="me-2">Sort By</span>
+            <button class="btn btn-outline-secondary btn-sm dropdown-toggle" data-bs-toggle="dropdown"
+              aria-expanded="false">Default</button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Default</a></li>
+              <li><a class="dropdown-item" href="#">Price: Low to High</a></li>
+              <li><a class="dropdown-item" href="#">Price: High to Low</a></li>
+              <li><a class="dropdown-item" href="#">Newest</a></li>
+            </ul>
+          </div>
+        </div>
+        <!-- Product Grid: 4 columns per row, up to 10 rows -->
+        <div class="row g-2 mb-5">
+          <!-- 40 Product Cards (4x10 grid), new size and style -->
+          <!-- Example product, repeat for 40 cards -->
+          <div class="col-6 col-sm-4 col-md-2 px-1">
+            <a href="singleProductView.html" class="text-decoration-none text-dark">
+              <div class="card custom-card">
+                <img src="resources/Samsung-Galaxy-S25-Plus-Price-in-Sri-Lanka-v.png" alt="Samsung Galaxy S25 Plus">
+                <div class="card-body">
+                  <h5 class="card-title">Samsung Galaxy S25 Plus</h5>
+                  <p class="card-text">12GB RAM | 256GB Storage</p>
+                  <p class="fw-bold">Rs.365,272.00</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-6 col-sm-4 col-md-2 px-1">
+            <a href="singleProductView.html" class="text-decoration-none text-dark">
+              <div class="card custom-card">
+                <img src="resources/Samsung-Galaxy-S25-Plus-Price-in-Sri-Lanka-v.png" alt="Samsung Galaxy S25 Plus">
+                <div class="card-body">
+                  <h5 class="card-title">Samsung Galaxy S25 Plus</h5>
+                  <p class="card-text">12GB RAM | 256GB Storage</p>
+                  <p class="fw-bold">Rs.365,272.00</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-6 col-sm-4 col-md-2 px-1">
+            <a href="singleProductView.html" class="text-decoration-none text-dark">
+              <div class="card custom-card">
+                <img src="resources/Samsung-Galaxy-S25-Plus-Price-in-Sri-Lanka-v.png" alt="Samsung Galaxy S25 Plus">
+                <div class="card-body">
+                  <h5 class="card-title">Samsung Galaxy S25 Plus</h5>
+                  <p class="card-text">12GB RAM | 256GB Storage</p>
+                  <p class="fw-bold">Rs.365,272.00</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-6 col-sm-4 col-md-2 px-1">
+            <a href="singleProductView.html" class="text-decoration-none text-dark">
+              <div class="card custom-card">
+                <img src="resources/Samsung-Galaxy-S25-Plus-Price-in-Sri-Lanka-v.png" alt="Samsung Galaxy S25 Plus">
+                <div class="card-body">
+                  <h5 class="card-title">Samsung Galaxy S25 Plus</h5>
+                  <p class="card-text">12GB RAM | 256GB Storage</p>
+                  <p class="fw-bold">Rs.365,272.00</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-6 col-sm-4 col-md-2 px-1">
+            <a href="singleProductView.html" class="text-decoration-none text-dark">
+              <div class="card custom-card">
+                <img src="resources/Samsung-Galaxy-S25-Plus-Price-in-Sri-Lanka-v.png" alt="Samsung Galaxy S25 Plus">
+                <div class="card-body">
+                  <h5 class="card-title">Samsung Galaxy S25 Plus</h5>
+                  <p class="card-text">12GB RAM | 256GB Storage</p>
+                  <p class="fw-bold">Rs.365,272.00</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-6 col-sm-4 col-md-2 px-1">
+            <a href="singleProductView.html" class="text-decoration-none text-dark">
+              <div class="card custom-card">
+                <img src="resources/Samsung-Galaxy-S25-Plus-Price-in-Sri-Lanka-v.png" alt="Samsung Galaxy S25 Plus">
+                <div class="card-body">
+                  <h5 class="card-title">Samsung Galaxy S25 Plus</h5>
+                  <p class="card-text">12GB RAM | 256GB Storage</p>
+                  <p class="fw-bold">Rs.365,272.00</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-6 col-sm-4 col-md-2 px-1">
+            <a href="singleProductView.html" class="text-decoration-none text-dark">
+              <div class="card custom-card">
+                <img src="resources/Samsung-Galaxy-S25-Plus-Price-in-Sri-Lanka-v.png" alt="Samsung Galaxy S25 Plus">
+                <div class="card-body">
+                  <h5 class="card-title">Samsung Galaxy S25 Plus</h5>
+                  <p class="card-text">12GB RAM | 256GB Storage</p>
+                  <p class="fw-bold">Rs.365,272.00</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-6 col-sm-4 col-md-2 px-1">
+            <a href="singleProductView.html" class="text-decoration-none text-dark">
+              <div class="card custom-card">
+                <img src="resources/Samsung-Galaxy-S25-Plus-Price-in-Sri-Lanka-v.png" alt="Samsung Galaxy S25 Plus">
+                <div class="card-body">
+                  <h5 class="card-title">Samsung Galaxy S25 Plus</h5>
+                  <p class="card-text">12GB RAM | 256GB Storage</p>
+                  <p class="fw-bold">Rs.365,272.00</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-6 col-sm-4 col-md-2 px-1">
+            <a href="singleProductView.html" class="text-decoration-none text-dark">
+              <div class="card custom-card">
+                <img src="resources/Samsung-Galaxy-S25-Plus-Price-in-Sri-Lanka-v.png" alt="Samsung Galaxy S25 Plus">
+                <div class="card-body">
+                  <h5 class="card-title">Samsung Galaxy S25 Plus</h5>
+                  <p class="card-text">12GB RAM | 256GB Storage</p>
+                  <p class="fw-bold">Rs.365,272.00</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-6 col-sm-4 col-md-2 px-1">
+            <a href="singleProductView.html" class="text-decoration-none text-dark">
+              <div class="card custom-card">
+                <img src="resources/Samsung-Galaxy-S25-Plus-Price-in-Sri-Lanka-v.png" alt="Samsung Galaxy S25 Plus">
+                <div class="card-body">
+                  <h5 class="card-title">Samsung Galaxy S25 Plus</h5>
+                  <p class="card-text">12GB RAM | 256GB Storage</p>
+                  <p class="fw-bold">Rs.365,272.00</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-6 col-sm-4 col-md-2 px-1">
+            <a href="singleProductView.html" class="text-decoration-none text-dark">
+              <div class="card custom-card">
+                <img src="resources/Samsung-Galaxy-S25-Plus-Price-in-Sri-Lanka-v.png" alt="Samsung Galaxy S25 Plus">
+                <div class="card-body">
+                  <h5 class="card-title">Samsung Galaxy S25 Plus</h5>
+                  <p class="card-text">12GB RAM | 256GB Storage</p>
+                  <p class="fw-bold">Rs.365,272.00</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-6 col-sm-4 col-md-2 px-1">
+            <a href="singleProductView.html" class="text-decoration-none text-dark">
+              <div class="card custom-card">
+                <img src="resources/Samsung-Galaxy-S25-Plus-Price-in-Sri-Lanka-v.png" alt="Samsung Galaxy S25 Plus">
+                <div class="card-body">
+                  <h5 class="card-title">Samsung Galaxy S25 Plus</h5>
+                  <p class="card-text">12GB RAM | 256GB Storage</p>
+                  <p class="fw-bold">Rs.365,272.00</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-6 col-sm-4 col-md-2 px-1">
+            <a href="singleProductView.html" class="text-decoration-none text-dark">
+              <div class="card custom-card">
+                <img src="resources/Samsung-Galaxy-S25-Plus-Price-in-Sri-Lanka-v.png" alt="Samsung Galaxy S25 Plus">
+                <div class="card-body">
+                  <h5 class="card-title">Samsung Galaxy S25 Plus</h5>
+                  <p class="card-text">12GB RAM | 256GB Storage</p>
+                  <p class="fw-bold">Rs.365,272.00</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-6 col-sm-4 col-md-2 px-1">
+            <a href="singleProductView.html" class="text-decoration-none text-dark">
+              <div class="card custom-card">
+                <img src="resources/Samsung-Galaxy-S25-Plus-Price-in-Sri-Lanka-v.png" alt="Samsung Galaxy S25 Plus">
+                <div class="card-body">
+                  <h5 class="card-title">Samsung Galaxy S25 Plus</h5>
+                  <p class="card-text">12GB RAM | 256GB Storage</p>
+                  <p class="fw-bold">Rs.365,272.00</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-6 col-sm-4 col-md-2 px-1">
+            <a href="singleProductView.html" class="text-decoration-none text-dark">
+              <div class="card custom-card">
+                <img src="resources/Samsung-Galaxy-S25-Plus-Price-in-Sri-Lanka-v.png" alt="Samsung Galaxy S25 Plus">
+                <div class="card-body">
+                  <h5 class="card-title">Samsung Galaxy S25 Plus</h5>
+                  <p class="card-text">12GB RAM | 256GB Storage</p>
+                  <p class="fw-bold">Rs.365,272.00</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-6 col-sm-4 col-md-2 px-1">
+            <a href="singleProductView.html" class="text-decoration-none text-dark">
+              <div class="card custom-card">
+                <img src="resources/Samsung-Galaxy-S25-Plus-Price-in-Sri-Lanka-v.png" alt="Samsung Galaxy S25 Plus">
+                <div class="card-body">
+                  <h5 class="card-title">Samsung Galaxy S25 Plus</h5>
+                  <p class="card-text">12GB RAM | 256GB Storage</p>
+                  <p class="fw-bold">Rs.365,272.00</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-6 col-sm-4 col-md-2 px-1">
+            <a href="singleProductView.html" class="text-decoration-none text-dark">
+              <div class="card custom-card">
+                <img src="resources/Samsung-Galaxy-S25-Plus-Price-in-Sri-Lanka-v.png" alt="Samsung Galaxy S25 Plus">
+                <div class="card-body">
+                  <h5 class="card-title">Samsung Galaxy S25 Plus</h5>
+                  <p class="card-text">12GB RAM | 256GB Storage</p>
+                  <p class="fw-bold">Rs.365,272.00</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-6 col-sm-4 col-md-2 px-1">
+            <a href="singleProductView.html" class="text-decoration-none text-dark">
+              <div class="card custom-card">
+                <img src="resources/Samsung-Galaxy-S25-Plus-Price-in-Sri-Lanka-v.png" alt="Samsung Galaxy S25 Plus">
+                <div class="card-body">
+                  <h5 class="card-title">Samsung Galaxy S25 Plus</h5>
+                  <p class="card-text">12GB RAM | 256GB Storage</p>
+                  <p class="fw-bold">Rs.365,272.00</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-6 col-sm-4 col-md-2 px-1">
+            <a href="singleProductView.html" class="text-decoration-none text-dark">
+              <div class="card custom-card">
+                <img src="resources/Samsung-Galaxy-S25-Plus-Price-in-Sri-Lanka-v.png" alt="Samsung Galaxy S25 Plus">
+                <div class="card-body">
+                  <h5 class="card-title">Samsung Galaxy S25 Plus</h5>
+                  <p class="card-text">12GB RAM | 256GB Storage</p>
+                  <p class="fw-bold">Rs.365,272.00</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-6 col-sm-4 col-md-2 px-1">
+            <a href="singleProductView.html" class="text-decoration-none text-dark">
+              <div class="card custom-card">
+                <img src="resources/Samsung-Galaxy-S25-Plus-Price-in-Sri-Lanka-v.png" alt="Samsung Galaxy S25 Plus">
+                <div class="card-body">
+                  <h5 class="card-title">Samsung Galaxy S25 Plus</h5>
+                  <p class="card-text">12GB RAM | 256GB Storage</p>
+                  <p class="fw-bold">Rs.365,272.00</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-6 col-sm-4 col-md-2 px-1">
+            <a href="singleProductView.html" class="text-decoration-none text-dark">
+              <div class="card custom-card">
+                <img src="resources/Samsung-Galaxy-S25-Plus-Price-in-Sri-Lanka-v.png" alt="Samsung Galaxy S25 Plus">
+                <div class="card-body">
+                  <h5 class="card-title">Samsung Galaxy S25 Plus</h5>
+                  <p class="card-text">12GB RAM | 256GB Storage</p>
+                  <p class="fw-bold">Rs.365,272.00</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-6 col-sm-4 col-md-2 px-1">
+            <a href="singleProductView.html" class="text-decoration-none text-dark">
+              <div class="card custom-card">
+                <img src="resources/Samsung-Galaxy-S25-Plus-Price-in-Sri-Lanka-v.png" alt="Samsung Galaxy S25 Plus">
+                <div class="card-body">
+                  <h5 class="card-title">Samsung Galaxy S25 Plus</h5>
+                  <p class="card-text">12GB RAM | 256GB Storage</p>
+                  <p class="fw-bold">Rs.365,272.00</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-6 col-sm-4 col-md-2 px-1">
+            <a href="singleProductView.html" class="text-decoration-none text-dark">
+              <div class="card custom-card">
+                <img src="resources/Samsung-Galaxy-S25-Plus-Price-in-Sri-Lanka-v.png" alt="Samsung Galaxy S25 Plus">
+                <div class="card-body">
+                  <h5 class="card-title">Samsung Galaxy S25 Plus</h5>
+                  <p class="card-text">12GB RAM | 256GB Storage</p>
+                  <p class="fw-bold">Rs.365,272.00</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-6 col-sm-4 col-md-2 px-1">
+            <a href="singleProductView.html" class="text-decoration-none text-dark">
+              <div class="card custom-card">
+                <img src="resources/Samsung-Galaxy-S25-Plus-Price-in-Sri-Lanka-v.png" alt="Samsung Galaxy S25 Plus">
+                <div class="card-body">
+                  <h5 class="card-title">Samsung Galaxy S25 Plus</h5>
+                  <p class="card-text">12GB RAM | 256GB Storage</p>
+                  <p class="fw-bold">Rs.365,272.00</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-6 col-sm-4 col-md-2 px-1">
+            <a href="singleProductView.html" class="text-decoration-none text-dark">
+              <div class="card custom-card">
+                <img src="resources/Samsung-Galaxy-S25-Plus-Price-in-Sri-Lanka-v.png" alt="Samsung Galaxy S25 Plus">
+                <div class="card-body">
+                  <h5 class="card-title">Samsung Galaxy S25 Plus</h5>
+                  <p class="card-text">12GB RAM | 256GB Storage</p>
+                  <p class="fw-bold">Rs.365,272.00</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-6 col-sm-4 col-md-2 px-1">
+            <a href="singleProductView.html" class="text-decoration-none text-dark">
+              <div class="card custom-card">
+                <img src="resources/Samsung-Galaxy-S25-Plus-Price-in-Sri-Lanka-v.png" alt="Samsung Galaxy S25 Plus">
+                <div class="card-body">
+                  <h5 class="card-title">Samsung Galaxy S25 Plus</h5>
+                  <p class="card-text">12GB RAM | 256GB Storage</p>
+                  <p class="fw-bold">Rs.365,272.00</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-6 col-sm-4 col-md-2 px-1">
+            <a href="singleProductView.html" class="text-decoration-none text-dark">
+              <div class="card custom-card">
+                <img src="resources/Samsung-Galaxy-S25-Plus-Price-in-Sri-Lanka-v.png" alt="Samsung Galaxy S25 Plus">
+                <div class="card-body">
+                  <h5 class="card-title">Samsung Galaxy S25 Plus</h5>
+                  <p class="card-text">12GB RAM | 256GB Storage</p>
+                  <p class="fw-bold">Rs.365,272.00</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <!-- Repeat above block for 40 cards -->
+          <div class="col-6 col-sm-4 col-md-2 px-1">
+            <a href="singleProductView.html" class="text-decoration-none text-dark">
+              <div class="card custom-card">
+                <img src="resources/Samsung-Galaxy-S25-Plus-Price-in-Sri-Lanka-v.png" alt="Samsung Galaxy S25 Plus">
+                <div class="card-body">
+                  <h5 class="card-title">Samsung Galaxy S25 Plus</h5>
+                  <p class="card-text">12GB RAM | 256GB Storage</p>
+                  <p class="fw-bold">Rs.365,272.00</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-6 col-sm-4 col-md-2 px-1">
+            <a href="singleProductView.html" class="text-decoration-none text-dark">
+              <div class="card custom-card">
+                <img src="resources/Samsung-Galaxy-S25-Plus-Price-in-Sri-Lanka-v.png" alt="Samsung Galaxy S25 Plus">
+                <div class="card-body">
+                  <h5 class="card-title">Samsung Galaxy S25 Plus</h5>
+                  <p class="card-text">12GB RAM | 256GB Storage</p>
+                  <p class="fw-bold">Rs.365,272.00</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-6 col-sm-4 col-md-2 px-1">
+            <a href="singleProductView.html" class="text-decoration-none text-dark">
+              <div class="card custom-card">
+                <img src="resources/Samsung-Galaxy-S25-Plus-Price-in-Sri-Lanka-v.png" alt="Samsung Galaxy S25 Plus">
+                <div class="card-body">
+                  <h5 class="card-title">Samsung Galaxy S25 Plus</h5>
+                  <p class="card-text">12GB RAM | 256GB Storage</p>
+                  <p class="fw-bold">Rs.365,272.00</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <!-- ...repeat above block for a total of 40 cards... -->
+          <!-- For brevity, only 4 shown here. In your actual file, copy the block 40 times for a full grid. -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Footer: Exclusive Brands, Info, Socials, Copyright -->
+  <footer class="bg-light mt-5">
+    <div class="container py-5">
+      <!-- Exclusive Brands -->
+      <div class="d-flex justify-content-center mb-4 gap-3">
+        <img src="resources\applelogo.png" height="100" alt="Brand1">
+        <img src="resources\applelogo.png" height="100" alt="Brand2">
+        <img src="resources\applelogo.png" height="100" alt="Brand3">
+        <img src="resources\applelogo.png" height="100" alt="Brand3">
+        <img src="resources\applelogo.png" height="100" alt="Brand3">
+        <!-- ...other brands -->
+      </div>
+
+      <div class="container-fluid mt-5">
+        <h6>MOST SEARCHED FOR ON CELLTRONICS</h6>
+        <p>iPhone 11 | iPhone 12 | iPhone 13 | iPhone 14 | iPhone 15 | iPhone 15 Pro Max |
+          MacBook | Galaxy S24 Ultra | Galaxy S25 | Galaxy S25 Ultra | 5G Mobile Phones |
+          iPhone 16 series | Samsung Galaxy Z Fold 6 | JBL Speakers | Galaxy A35 | Samsung Galaxy A15 |
+          Samsung Galaxy A55 5G | Samsung A series | Google Pixel 7 series | Galaxy S23 Ultra 12GB RAM 256GB |
+          Galaxy A25 | Pixel 9 12GB RAM 128GB | Samsung Galaxy M35 | Redmi Note 13 Series | Samsung Galaxy A35
+          5G 8GB RAM 128GB |
+          Samsung Galaxy A05 4GB RAM 64GB | JBL Partybox 310 | Google Pixel 7 5G 8GB RAM 128GB | Google Pixel
+          9 series |
+          Samsung Galaxy A06 4GB RAM 128GB | Samsung Galaxy M14 5G 6GB RAM 128GB | Apple iPhone 15 Pro Max
+          256GB | JBL PartyBox 1000
+          | Samsung Galaxy A15 6GB RAM 128GB | CMF by Nothing Phone 1 | Google Pixel 7 5G 8GB RAM 128GB |
+          Google Pixel 9 12GB RAM 128GB |
+          Samsung galaxy S23 8GB 256GB | Nokia 105 Dual Sim | Samsung Galaxy Watch 7 | Galaxy Z Fold 6 12GB
+          RAM 256GB |
+          Samsung Galaxy S24 8GB RAM 256GB | Nothing CMF Watch Pro 2 | Google Pixel 9 Pro Fold 16GB RAM 256GB
+          | Apple iPhone 16 Pro Max 256GB</p>
+
+        <h6>Mobiles</h6>
+        <p>Galaxy S25 ultra | iPhone 16 Pro Max | Nokia Mobile | OnePlus 13R | S24 Ultra 256GB | Galaxy A15 |
+          Google Pixel Mobile | Galaxy A55 5G 8GB | iPhone 15 Pro 128GB | Galaxy M55 | Pixel 9 | Pixel 7 Pro |
+          Pixel 8 | Pixel 8 Pro | iPhone 11 128GB | OnePlus 13 | Redmi Note 14 Pro 5G | M35 | OnePlus 12</p>
+
+        <h6>MacBook</h6>
+        <p>Apple Macbook Air M2 Chip | Apple Mac Mini M1 Chip | Apple MacBook Air M3 Chip | Apple 2023 MacBook
+          Pro M3 chip|
+          Apple Macbook </p>
+
+        <h6>iPads & Tablets</h6>
+        <p>Samsung Galaxy Tab S9 Series | Honor Pad X9 | Apple iPad Air M2 Chip | Apple iPad Pro M2 | Apple iPad
+          10.9-inch |
+          Tab S6 Lite 2024 | Samsung Galaxy Tab A8 | Galaxy Tab S9 Ultra | Redmi Pad SE | Apple iPad Pro M4
+          Chip |
+          Apple iPad 10.9-inch WiFi + Cellular 10th Gen 64GB </p>
+      </div>
+      <!-- Info Columns -->
+      <div class="row mt-5">
+        <div class="col-md-3">
+          <h6>About Us</h6>
+          <p class="small text-muted">Company description, mission, etc.
+          </p>
+        </div>
+        <div class="col-md-3">
+          <h6>Customer Service</h6>
+          <ul class="list-unstyled small">
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h6>My Account</h6>
+          <ul class="list-unstyled small">
+            <li><a href="#">Login</a></li>
+            <li><a href="#">Register</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h6>Follow Us</h6>
+          <ul class="list-inline">
+            <li class="list-inline-item"><a href="#"><img src="resources/fb.png" width="24"></a>
+            </li>
+            <li class="list-inline-item"><a href="#"><img src="resources/ig.png" width="24"></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="text-center mt-4 small text-muted">&copy; 2025 Digitronix.
+        All rights reserved.</div>
+    </div>
+    </div>
+    </div>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+
+</html>

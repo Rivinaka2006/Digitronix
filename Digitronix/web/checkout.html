@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout - Digitronix</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Main Header -->
+  <nav id="main-header" class="navbar navbar-expand-lg bg-primary text-white sticky-top p-0" style="z-index:1040;">
+    <div class="container-fluid py-3 px-2">
+      <a class="navbar-brand text-white fw-bold fs-3 me-lg-5" href="index.html">
+        <img src="resources/logo.png" alt="Logo" style="height:38px;width:auto;margin-right:10px;">
+        DIGITRONIX</a>
+      <button class="navbar-toggler text-white border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainHeaderNav" aria-controls="mainHeaderNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainHeaderNav">
+        <form class="d-flex flex-grow-1 mx-lg-3 my-3 my-lg-0 order-2 order-lg-1" role="search">
+          <input class="form-control form-control-md me-2" type="search" placeholder="Search for products..." aria-label="Search">
+          <button class="btn btn-success me-3" type="submit">Search</button>
+        </form>
+        <ul class="navbar-nav ms-auto align-items-lg-center order-3 order-lg-2 flex-row flex-lg-row">
+          <li class="nav-item me-lg-4 mb-2 mb-lg-0">
+            <a href="login.html" class="text-white text-decoration-none">LOGIN / REGISTER</a>
+          </li>
+          <li class="nav-item me-lg-4 mb-2 mb-lg-0">
+            <span class="material-symbols-outlined">favorite</span>
+          </li>
+          <li class="nav-item me-lg-4 mb-2 mb-lg-0">
+            <span class="material-symbols-outlined">compare_arrows</span>
+          </li>
+          <li class="nav-item me-lg-4 mb-2 mb-lg-0">
+            <a href="cart.html" class="text-white"><span class="material-symbols-outlined">shopping_cart_checkout</span></a>
+          </li>
+          <li class="nav-item">
+            <span class="ms-lg-3">RS 0.00</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Category Bar -->
+  <nav id="category-bar" class="navbar navbar-expand-lg bg-light sticky-top shadow-sm" style="top:72px; z-index:1039;">
+    <div class="container-fluid py-2 px-2">
+      <div class="dropdown me-2 mb-2 mb-lg-0">
+        <button class="btn btn-light dropdown-toggle w-100" type="button" id="categoryDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+          Browse Categories
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="categoryDropdown">
+          <li><a class="dropdown-item" href="#">New Arrivals</a></li>
+          <li><a class="dropdown-item" href="#">Mobile Phones</a></li>
+          <li><a class="dropdown-item" href="#">Tablets & Ipads</a></li>
+          <li><a class="dropdown-item" href="#">Mobile Accessories</a></li>
+          <li><a class="dropdown-item" href="#">Smartwatches</a></li>
+          <li><a class="dropdown-item" href="#">Bluetooth Speakers</a></li>
+          <li><a class="dropdown-item" href="#">Earbuds</a></li>
+          <li><a class="dropdown-item" href="#">Headphones</a></li>
+          <li><a class="dropdown-item" href="#">Headsets</a></li>
+          <li><a class="dropdown-item" href="#">Power Banks</a></li>
+        </ul>
+      </div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#categoryBarNav" aria-controls="categoryBarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="categoryBarNav">
+        <ul class="navbar-nav ms-0">
+          <li class="nav-item"><a class="nav-link text-dark" href="#">Shop</a></li>
+          <li class="nav-item"><a class="nav-link text-dark" href="#">MacBooks</a></li>
+          <li class="nav-item"><a class="nav-link text-dark" href="#">Mobile Phones</a></li>
+          <li class="nav-item"><a class="nav-link text-dark" href="#">Accessories</a></li>
+          <li class="nav-item"><a class="nav-link text-dark" href="#">Gadgets</a></li>
+          <li class="nav-item"><a class="nav-link text-dark" href="#">Gift Vouchers</a></li>
+          <li class="nav-item"><a class="nav-link text-dark" href="#">Corporate</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container my-5">
+    <div class="row justify-content-center">
+      <!-- Billing Address Form -->
+      <div class="col-12 col-lg-6 mb-4 mb-lg-0">
+        <div class="card p-4 h-100 bg-white">
+          <h4 class="mb-4">Billing Address</h4>
+          <form>
+            <div class="row mb-3">
+              <div class="col-md-6 mb-3 mb-md-0">
+                <label for="firstName" class="form-label">First name *</label>
+                <input type="text" class="form-control" id="firstName" required>
+              </div>
+              <div class="col-md-6">
+                <label for="lastName" class="form-label">Last name *</label>
+                <input type="text" class="form-control" id="lastName" required>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="country" class="form-label">Country/Region *</label>
+              <select class="form-select" id="country" required>
+                <option value="">Select country/region</option>
+                <option value="Sri Lanka">Sri Lanka</option>
+                <option value="India">India</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="street" class="form-label">Street address *</label>
+              <input type="text" class="form-control" id="street" required>
+            </div>
+            <div class="mb-3">
+              <label for="city" class="form-label">Town/City/District *</label>
+              <select class="form-select" id="city" required>
+                <option value="">Select town/city/district</option>
+                <option value="Colombo">Colombo</option>
+                <option value="Kandy">Kandy</option>
+                <option value="Galle">Galle</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="mobile" class="form-label">Mobile Phone *</label>
+              <input type="tel" class="form-control" id="mobile" placeholder="Eg: 077xxxxxxx" required>
+            </div>
+            <div class="mb-4">
+              <label for="email" class="form-label">Email address *</label>
+              <input type="email" class="form-control" id="email" value="herathrivinaka@gmail.com" required>
+            </div>
+            <div class="d-grid">
+              <button type="submit" class="btn btn-primary btn-lg">SAVE ADDRESS</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <!-- Your Order Card -->
+      <div class="col-12 col-lg-5">
+        <div class="card p-4 h-100 bg-white">
+          <h4 class="mb-4">Your Order</h4>
+          <div class="mb-3">
+            <div class="fw-semibold">PRODUCT</div>
+            <div class="mt-2">Samsung Galaxy S25 Plus</div>
+            <div class="text-muted small">12GB RAM 256GB - Icy Blue, 2 Years Warranty × 1</div>
+            <div class="d-flex justify-content-between mt-2">
+              <span class="fw-semibold">Price:</span>
+              <span>Rs. 303,092.78</span>
+            </div>
+          </div>
+          <hr>
+          <div class="d-flex justify-content-between mb-2">
+            <span class="fw-semibold">SUBTOTAL:</span>
+            <span>Rs. 303,092.78</span>
+          </div>
+          <div class="mb-2">
+            <div class="fw-semibold mb-1">SHIPPING OPTIONS:</div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="shipping" id="standardDelivery" checked>
+              <label class="form-check-label" for="standardDelivery">
+                Standard Delivery <span class="ms-2">Rs. 600.00</span>
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="shipping" id="storePickup">
+              <label class="form-check-label" for="storePickup">
+                Store Pickup
+              </label>
+            </div>
+          </div>
+          <div class="d-flex justify-content-between mb-3">
+            <span class="fw-semibold">TOTAL:</span>
+            <span>Rs. 303,692.78</span>
+          </div>
+          <hr>
+          <div class="mb-2 fw-semibold"><span class="material-symbols-outlined align-middle me-1">card_giftcard</span> Gift Card:</div>
+          <div class="input-group mb-2">
+            <input type="text" class="form-control" placeholder="Enter your code...">
+            <button class="btn btn-outline-primary" type="button">APPLY</button>
+          </div>
+          <hr class="my-4">
+          <h5 class="mb-3 text-center">PAYMENT OPTIONS</h5>
+          <form>
+            <div class="form-check mb-2">
+              <input class="form-check-input" type="radio" name="paymentOption" id="payVisa" required>
+              <label class="form-check-label" for="payVisa">
+                Visa, MasterCard
+                <div class="small text-muted ms-4">
+                  - Secure purchase via Payhere Payment Gateway<br>
+                  - HSBC Installment – How to convert:<br>
+                  <span class="ms-3">• Perform as direct purchase / One-Off transaction<br>
+                  • Log in to www.hsbc.lk and submit conversion req.</span>
+                </div>
+              </label>
+            </div>
+            <div class="form-check mb-2">
+              <input class="form-check-input" type="radio" name="paymentOption" id="payBank">
+              <label class="form-check-label" for="payBank">Direct Bank Transfer</label>
+            </div>
+            <div class="form-check mb-2">
+              <input class="form-check-input" type="radio" name="paymentOption" id="paySampath12">
+              <label class="form-check-label" for="paySampath12">Sampath Bank – 12 Month Installment Plan</label>
+            </div>
+            <div class="form-check mb-3">
+              <input class="form-check-input" type="radio" name="paymentOption" id="paySampath24">
+              <label class="form-check-label" for="paySampath24">Sampath Bank – 24 Month Installment Plan</label>
+            </div>
+            <div class="alert alert-light border d-flex align-items-start mb-3" style="font-size:0.97rem;">
+              <span class="me-2" style="font-size:1.2rem;">🔒</span>
+              <div>
+                <strong>Personal data usage notice</strong><br>
+                <span class="small">- Used for order processing and user experience<br>
+                - Refer to privacy policy for details</span>
+              </div>
+            </div>
+            <div class="form-check mb-3">
+              <input class="form-check-input" type="checkbox" id="agreeTerms" required>
+              <label class="form-check-label" for="agreeTerms">
+                I have read and agree to the website terms and conditions *
+              </label>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg w-100">PLACE ORDER</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
